@@ -284,9 +284,7 @@ const Index = () => {
                 )}
                 <CardHeader className="text-center pb-8">
                   <CardTitle className="text-2xl mb-2">{plan.name}</CardTitle>
-                  <div className="text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">
-                    1999
-                  </div>
+                  <div className="text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2 ret1">501</div>
                   <CardDescription className="text-gray-400 text-lg">
                     {plan.reviews}
                   </CardDescription>
