@@ -16,4 +16,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://your-domain.com/sitemap.xml
+Sitemap: http://xn----ctbog0adgicmtj9fb.xn--p1ai/sitemap.xml
