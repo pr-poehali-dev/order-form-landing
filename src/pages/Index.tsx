@@ -1,19 +1,30 @@
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Badge } from '@/components/ui/badge';
-import Icon from '@/components/ui/icon';
-import { useToast } from '@/hooks/use-toast';
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Badge } from "@/components/ui/badge";
+import Icon from "@/components/ui/icon";
+import { useToast } from "@/hooks/use-toast";
 
 const Index = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    message: ''
+    name: "",
+    phone: "",
+    message: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -22,7 +33,7 @@ const Index = () => {
       title: "Заявка отправлена!",
       description: "Мы свяжемся с вами в ближайшее время.",
     });
-    setFormData({ name: '', phone: '', message: '' });
+    setFormData({ name: "", phone: "", message: "" });
   };
 
   return (
@@ -40,11 +51,16 @@ const Index = () => {
                 Купить отзыв на profi.ru
               </h1>
               <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                Повысьте рейтинг и доверие клиентов с помощью настоящих отзывов от реальных пользователей. Быстро, безопасно и эффективно.
+                Повысьте рейтинг и доверие клиентов с помощью настоящих отзывов
+                от реальных пользователей. Быстро, безопасно и эффективно.
               </p>
               <div className="flex flex-wrap gap-4 mb-8">
                 <div className="flex items-center gap-2">
-                  <Icon name="CheckCircle2" className="text-primary" size={24} />
+                  <Icon
+                    name="CheckCircle2"
+                    className="text-primary"
+                    size={24}
+                  />
                   <span className="text-gray-200">Гарантия качества</span>
                 </div>
                 <div className="flex items-center gap-2">
@@ -61,7 +77,9 @@ const Index = () => {
             <Card className="bg-card/50 backdrop-blur-lg border-primary/20 shadow-2xl shadow-primary/10 animate-scale-in">
               <CardHeader>
                 <CardTitle className="text-3xl">Оставить заявку</CardTitle>
-                <CardDescription className="text-gray-400">Заполните форму и мы свяжемся с вами в течение часа</CardDescription>
+                <CardDescription className="text-gray-400">
+                  Заполните форму и мы свяжемся с вами в течение часа
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -69,7 +87,9 @@ const Index = () => {
                     <Input
                       placeholder="Ваше имя"
                       value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, name: e.target.value })
+                      }
                       required
                       className="bg-background/50 border-primary/20 focus:border-primary"
                     />
@@ -79,7 +99,9 @@ const Index = () => {
                       placeholder="Телефон"
                       type="tel"
                       value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, phone: e.target.value })
+                      }
                       required
                       className="bg-background/50 border-primary/20 focus:border-primary"
                     />
@@ -88,12 +110,17 @@ const Index = () => {
                     <Textarea
                       placeholder="Ссылка на ваш профиль profi.ru и количество отзывов"
                       value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, message: e.target.value })
+                      }
                       required
                       className="bg-background/50 border-primary/20 focus:border-primary min-h-[100px]"
                     />
                   </div>
-                  <Button type="submit" className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-all text-lg py-6">
+                  <Button
+                    type="submit"
+                    className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-all text-lg py-6"
+                  >
                     Получить консультацию
                     <Icon name="ArrowRight" className="ml-2" size={20} />
                   </Button>
@@ -110,40 +137,53 @@ const Index = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                icon: 'Star',
-                title: 'Повышение рейтинга',
-                description: 'Увеличьте свой рейтинг на Profi.ru и станьте заметнее для потенциальных клиентов'
+                icon: "Star",
+                title: "Повышение рейтинга",
+                description:
+                  "Увеличьте свой рейтинг на Profi.ru и станьте заметнее для потенциальных клиентов",
               },
               {
-                icon: 'Users',
-                title: 'Реальные аккаунты',
-                description: 'Отзывы оставляют только проверенные пользователи с активными аккаунтами'
+                icon: "Users",
+                title: "Реальные аккаунты",
+                description:
+                  "Отзывы оставляют только проверенные пользователи с активными аккаунтами",
               },
               {
-                icon: 'TrendingUp',
-                title: 'Рост доверия',
-                description: 'Больше положительных отзывов = больше доверия со стороны новых клиентов'
+                icon: "TrendingUp",
+                title: "Рост доверия",
+                description:
+                  "Больше положительных отзывов = больше доверия со стороны новых клиентов",
               },
               {
-                icon: 'Clock',
-                title: 'Быстрое выполнение',
-                description: 'Отзывы начнут появляться уже через 24-48 часов после заказа'
+                icon: "Clock",
+                title: "Быстрое выполнение",
+                description:
+                  "Отзывы начнут появляться уже через 24-48 часов после заказа",
               },
               {
-                icon: 'Lock',
-                title: 'Полная конфиденциальность',
-                description: 'Никто не узнает, что отзывы были заказаны. Все выглядит естественно'
+                icon: "Lock",
+                title: "Полная конфиденциальность",
+                description:
+                  "Никто не узнает, что отзывы были заказаны. Все выглядит естественно",
               },
               {
-                icon: 'DollarSign',
-                title: 'Выгодные цены',
-                description: 'Гибкие тарифы под любой бюджет с возможностью индивидуального подхода'
-              }
+                icon: "DollarSign",
+                title: "Выгодные цены",
+                description:
+                  "Гибкие тарифы под любой бюджет с возможностью индивидуального подхода",
+              },
             ].map((item, index) => (
-              <Card key={index} className="bg-card/30 backdrop-blur border-primary/10 hover:border-primary/30 transition-all duration-300 hover:scale-105 group">
+              <Card
+                key={index}
+                className="bg-card/30 backdrop-blur border-primary/10 hover:border-primary/30 transition-all duration-300 hover:scale-105 group"
+              >
                 <CardHeader>
                   <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <Icon name={item.icon as any} size={28} className="text-white" />
+                    <Icon
+                      name={item.icon as any}
+                      size={28}
+                      className="text-white"
+                    />
                   </div>
                   <CardTitle className="text-xl">{item.title}</CardTitle>
                 </CardHeader>
@@ -163,30 +203,35 @@ const Index = () => {
             <div className="space-y-8">
               {[
                 {
-                  step: '01',
-                  title: 'Оставьте заявку',
-                  description: 'Заполните форму выше или свяжитесь с нами любым удобным способом'
+                  step: "01",
+                  title: "Оставьте заявку",
+                  description:
+                    "Заполните форму выше или свяжитесь с нами любым удобным способом",
                 },
                 {
-                  step: '02',
-                  title: 'Согласование деталей',
-                  description: 'Обсудим количество отзывов, их содержание и сроки выполнения'
+                  step: "02",
+                  title: "Согласование деталей",
+                  description:
+                    "Обсудим количество отзывов, их содержание и сроки выполнения",
                 },
                 {
-                  step: '03',
-                  title: 'Оплата услуги',
-                  description: 'Оплатите заказ удобным для вас способом. Работаем по предоплате'
+                  step: "03",
+                  title: "Оплата услуги",
+                  description:
+                    "Оплатите заказ удобным для вас способом. Работаем по предоплате",
                 },
                 {
-                  step: '04',
-                  title: 'Размещение отзывов',
-                  description: 'Наши специалисты начнут размещать отзывы согласно согласованному плану'
+                  step: "04",
+                  title: "Размещение отзывов",
+                  description:
+                    "Наши специалисты начнут размещать отзывы согласно согласованному плану",
                 },
                 {
-                  step: '05',
-                  title: 'Контроль результата',
-                  description: 'Отслеживайте появление отзывов на вашей странице в режиме реального времени'
-                }
+                  step: "05",
+                  title: "Контроль результата",
+                  description:
+                    "Отслеживайте появление отзывов на вашей странице в режиме реального времени",
+                },
               ].map((item, index) => (
                 <div key={index} className="flex gap-6 items-start group">
                   <div className="flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-2xl font-bold group-hover:scale-110 transition-transform">
@@ -209,26 +254,47 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[
               {
-                name: 'Старт',
-                price: '3 500',
-                reviews: '3 отзыва',
-                features: ['Реальные аккаунты', 'Текст по вашему ТЗ', 'Выполнение за 3-5 дней', 'Базовая поддержка']
+                name: "Старт",
+                price: "499",
+                reviews: "3 отзыва",
+                features: [
+                  "Реальные аккаунты",
+                  "Текст по вашему ТЗ",
+                  "Выполнение за 3-5 дней",
+                  "Базовая поддержка",
+                ],
               },
               {
-                name: 'Стандарт',
-                price: '6 500',
-                reviews: '7 отзывов',
-                features: ['Реальные аккаунты', 'Текст по вашему ТЗ', 'Выполнение за 5-7 дней', 'Приоритетная поддержка', 'Гарантия на отзывы'],
-                popular: true
+                name: "Стандарт",
+                price: "999",
+                reviews: "6 отзывов",
+                features: [
+                  "Реальные аккаунты",
+                  "Текст по вашему ТЗ",
+                  "Выполнение за 5-7 дней",
+                  "Приоритетная поддержка",
+                  "Гарантия на отзывы",
+                ],
+                popular: true,
               },
               {
-                name: 'Премиум',
-                price: '12 000',
-                reviews: '15 отзывов',
-                features: ['Реальные аккаунты', 'Текст по вашему ТЗ', 'Выполнение за 7-10 дней', 'VIP поддержка 24/7', 'Гарантия на отзывы', 'Бонусные отзывы']
-              }
+                name: "Премиум",
+                price: "1999",
+                reviews: "14 отзывов",
+                features: [
+                  "Реальные аккаунты",
+                  "Текст по вашему ТЗ",
+                  "Выполнение за 7-10 дней",
+                  "VIP поддержка 24/7",
+                  "Гарантия на отзывы",
+                  "Бонусные отзывы",
+                ],
+              },
             ].map((plan, index) => (
-              <Card key={index} className={`relative bg-card/30 backdrop-blur border-primary/10 hover:border-primary/30 transition-all duration-300 hover:scale-105 ${plan.popular ? 'border-primary/50 shadow-xl shadow-primary/20' : ''}`}>
+              <Card
+                key={index}
+                className={`relative bg-card/30 backdrop-blur border-primary/10 hover:border-primary/30 transition-all duration-300 hover:scale-105 ${plan.popular ? "border-primary/50 shadow-xl shadow-primary/20" : ""}`}
+              >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                     <Badge className="bg-gradient-to-r from-primary to-secondary text-white border-0 px-4 py-1">
@@ -238,14 +304,22 @@ const Index = () => {
                 )}
                 <CardHeader className="text-center pb-8">
                   <CardTitle className="text-2xl mb-2">{plan.name}</CardTitle>
-                  <div className="text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">1999</div>
-                  <CardDescription className="text-gray-400 text-lg">{plan.reviews}</CardDescription>
+                  <div className="text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">
+                    1999
+                  </div>
+                  <CardDescription className="text-gray-400 text-lg">
+                    {plan.reviews}
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3 mb-6">
                     {plan.features.map((feature, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <Icon name="Check" className="text-primary flex-shrink-0 mt-1" size={18} />
+                        <Icon
+                          name="Check"
+                          className="text-primary flex-shrink-0 mt-1"
+                          size={18}
+                        />
                         <span className="text-gray-300">{feature}</span>
                       </li>
                     ))}
@@ -266,25 +340,28 @@ const Index = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[
               {
-                name: 'Алексей М.',
-                role: 'Мастер по ремонту',
+                name: "Алексей М.",
+                role: "Мастер по ремонту",
                 rating: 5,
-                text: 'Заказал 7 отзывов для своего профиля. Результат превзошел ожидания! Поток клиентов увеличился в 2 раза.'
+                text: "Заказал 7 отзывов для своего профиля. Результат превзошел ожидания! Поток клиентов увеличился в 2 раза.",
               },
               {
-                name: 'Екатерина П.',
-                role: 'Репетитор',
+                name: "Екатерина П.",
+                role: "Репетитор",
                 rating: 5,
-                text: 'Отличный сервис! Отзывы появились в течение 3 дней, выглядят абсолютно естественно. Всем рекомендую.'
+                text: "Отличный сервис! Отзывы появились в течение 3 дней, выглядят абсолютно естественно. Всем рекомендую.",
               },
               {
-                name: 'Дмитрий К.',
-                role: 'Сантехник',
+                name: "Дмитрий К.",
+                role: "Сантехник",
                 rating: 5,
-                text: 'Уже второй раз заказываю отзывы здесь. Профессиональный подход, быстрое выполнение, адекватные цены.'
-              }
+                text: "Уже второй раз заказываю отзывы здесь. Профессиональный подход, быстрое выполнение, адекватные цены.",
+              },
             ].map((review, index) => (
-              <Card key={index} className="bg-card/30 backdrop-blur border-primary/10 hover:border-primary/30 transition-all">
+              <Card
+                key={index}
+                className="bg-card/30 backdrop-blur border-primary/10 hover:border-primary/30 transition-all"
+              >
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-xl font-bold">
@@ -292,12 +369,19 @@ const Index = () => {
                     </div>
                     <div>
                       <CardTitle className="text-lg">{review.name}</CardTitle>
-                      <CardDescription className="text-gray-400">{review.role}</CardDescription>
+                      <CardDescription className="text-gray-400">
+                        {review.role}
+                      </CardDescription>
                     </div>
                   </div>
                   <div className="flex gap-1">
                     {Array.from({ length: review.rating }).map((_, i) => (
-                      <Icon key={i} name="Star" className="text-primary fill-primary" size={18} />
+                      <Icon
+                        key={i}
+                        name="Star"
+                        className="text-primary fill-primary"
+                        size={18}
+                      />
                     ))}
                   </div>
                 </CardHeader>
@@ -317,27 +401,36 @@ const Index = () => {
             <Accordion type="single" collapsible className="space-y-4">
               {[
                 {
-                  question: 'Это безопасно?',
-                  answer: 'Да, абсолютно безопасно. Мы используем только проверенные методы и реальные аккаунты, что исключает риск блокировки вашего профиля.'
+                  question: "Это безопасно?",
+                  answer:
+                    "Да, абсолютно безопасно. Мы используем только проверенные методы и реальные аккаунты, что исключает риск блокировки вашего профиля.",
                 },
                 {
-                  question: 'Как быстро появятся отзывы?',
-                  answer: 'Первые отзывы начнут появляться через 24-48 часов после оплаты. Полное выполнение заказа занимает от 3 до 10 дней в зависимости от выбранного тарифа.'
+                  question: "Как быстро появятся отзывы?",
+                  answer:
+                    "Первые отзывы начнут появляться через 24-48 часов после оплаты. Полное выполнение заказа занимает от 3 до 10 дней в зависимости от выбранного тарифа.",
                 },
                 {
-                  question: 'Можно ли выбрать содержание отзывов?',
-                  answer: 'Да, вы можете предоставить нам техническое задание с ключевыми моментами, которые должны быть упомянуты в отзывах. Мы составим естественные тексты на их основе.'
+                  question: "Можно ли выбрать содержание отзывов?",
+                  answer:
+                    "Да, вы можете предоставить нам техническое задание с ключевыми моментами, которые должны быть упомянуты в отзывах. Мы составим естественные тексты на их основе.",
                 },
                 {
-                  question: 'Что если отзыв удалят?',
-                  answer: 'Мы даем гарантию на все размещенные отзывы. Если отзыв будет удален модерацией в течение 30 дней, мы разместим новый бесплатно.'
+                  question: "Что если отзыв удалят?",
+                  answer:
+                    "Мы даем гарантию на все размещенные отзывы. Если отзыв будет удален модерацией в течение 30 дней, мы разместим новый бесплатно.",
                 },
                 {
-                  question: 'Какие способы оплаты доступны?',
-                  answer: 'Мы принимаем оплату банковскими картами, электронными кошельками и банковскими переводами. Работаем по 100% предоплате.'
-                }
+                  question: "Какие способы оплаты доступны?",
+                  answer:
+                    "Мы принимаем оплату банковскими картами, электронными кошельками и банковскими переводами. Работаем по 100% предоплате.",
+                },
               ].map((item, index) => (
-                <AccordionItem key={index} value={`item-${index}`} className="bg-card/30 backdrop-blur border border-primary/10 rounded-lg px-6">
+                <AccordionItem
+                  key={index}
+                  value={`item-${index}`}
+                  className="bg-card/30 backdrop-blur border border-primary/10 rounded-lg px-6"
+                >
                   <AccordionTrigger className="text-lg font-semibold hover:no-underline hover:text-primary transition-colors">
                     {item.question}
                   </AccordionTrigger>
@@ -357,30 +450,41 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {[
               {
-                icon: 'ShieldCheck',
-                title: 'Гарантия качества',
-                description: 'Все отзывы размещаются только с реальных аккаунтов с историей активности'
+                icon: "ShieldCheck",
+                title: "Гарантия качества",
+                description:
+                  "Все отзывы размещаются только с реальных аккаунтов с историей активности",
               },
               {
-                icon: 'RefreshCcw',
-                title: 'Замена в случае удаления',
-                description: 'Если отзыв будет удален в течение 30 дней, мы бесплатно разместим новый'
+                icon: "RefreshCcw",
+                title: "Замена в случае удаления",
+                description:
+                  "Если отзыв будет удален в течение 30 дней, мы бесплатно разместим новый",
               },
               {
-                icon: 'FileText',
-                title: 'Договор и чек',
-                description: 'Оформляем официальный договор и предоставляем все закрывающие документы'
+                icon: "FileText",
+                title: "Договор и чек",
+                description:
+                  "Оформляем официальный договор и предоставляем все закрывающие документы",
               },
               {
-                icon: 'Headphones',
-                title: 'Поддержка 24/7',
-                description: 'Наша команда всегда на связи и готова ответить на любые ваши вопросы'
-              }
+                icon: "Headphones",
+                title: "Поддержка 24/7",
+                description:
+                  "Наша команда всегда на связи и готова ответить на любые ваши вопросы",
+              },
             ].map((item, index) => (
-              <Card key={index} className="bg-card/30 backdrop-blur border-primary/10 hover:border-primary/30 transition-all group">
+              <Card
+                key={index}
+                className="bg-card/30 backdrop-blur border-primary/10 hover:border-primary/30 transition-all group"
+              >
                 <CardHeader>
                   <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <Icon name={item.icon as any} size={32} className="text-white" />
+                    <Icon
+                      name={item.icon as any}
+                      size={32}
+                      className="text-white"
+                    />
                   </div>
                   <CardTitle className="text-2xl">{item.title}</CardTitle>
                 </CardHeader>
@@ -399,9 +503,13 @@ const Index = () => {
                 Готовы улучшить свой рейтинг?
               </h2>
               <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                Оставьте заявку сейчас и получите бесплатную консультацию по продвижению вашего профиля на Profi.ru
+                Оставьте заявку сейчас и получите бесплатную консультацию по
+                продвижению вашего профиля на Profi.ru
               </p>
-              <Button size="lg" className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-all text-lg px-12 py-6">
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-all text-lg px-12 py-6"
+              >
                 Получить консультацию
                 <Icon name="MessageCircle" className="ml-2" size={22} />
               </Button>
@@ -412,7 +520,10 @@ const Index = () => {
         <footer className="container mx-auto px-4 py-12 border-t border-primary/10">
           <div className="text-center text-gray-400">
             <p className="mb-2">© 2024 Profi Reviews. Все права защищены.</p>
-            <p className="text-sm">Мы не аффилированы с Profi.ru и предоставляем независимые маркетинговые услуги</p>
+            <p className="text-sm">
+              Мы не аффилированы с Profi.ru и предоставляем независимые
+              маркетинговые услуги
+            </p>
           </div>
         </footer>
       </div>
