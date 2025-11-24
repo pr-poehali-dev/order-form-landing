@@ -78,9 +78,15 @@ const Index = () => {
               <Card className="bg-gradient-to-br from-primary/20 via-secondary/20 to-primary/20 backdrop-blur-lg border-primary/30 shadow-2xl shadow-primary/20 p-8 text-center">
                 <CardHeader>
                   <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center animate-pulse">
-                    <Icon name="MessageCircle" size={40} className="text-white" />
+                    <Icon
+                      name="MessageCircle"
+                      size={40}
+                      className="text-white"
+                    />
                   </div>
-                  <CardTitle className="text-3xl mb-4">Готовы повысить рейтинг?</CardTitle>
+                  <CardTitle className="text-3xl mb-4">
+                    Готовы повысить рейтинг?
+                  </CardTitle>
                   <CardDescription className="text-lg text-gray-300">
                     Свяжитесь со мной в Telegram для обсуждения деталей
                   </CardDescription>
@@ -284,7 +290,9 @@ const Index = () => {
                 )}
                 <CardHeader className="text-center pb-8">
                   <CardTitle className="text-2xl mb-2">{plan.name}</CardTitle>
-                  <div className="text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2 ret1">499</div>
+                  <div className="text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2 ret1">
+                    {plan.price}
+                  </div>
                   <CardDescription className="text-gray-400 text-lg">
                     {plan.reviews}
                   </CardDescription>
