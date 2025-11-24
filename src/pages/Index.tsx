@@ -74,10 +74,39 @@ const Index = () => {
               </div>
             </div>
 
-            <Card className="bg-card/50 backdrop-blur-lg border-primary/20 shadow-2xl shadow-primary/10 animate-scale-in">
-              <CardTitle className="text-3xl">Оставить заявку</CardTitle>
-              тут должна быть сочная кнопка
-            </Card>
+            <div className="animate-scale-in">
+              <Card className="bg-gradient-to-br from-primary/20 via-secondary/20 to-primary/20 backdrop-blur-lg border-primary/30 shadow-2xl shadow-primary/20 p-8 text-center">
+                <CardHeader>
+                  <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center animate-pulse">
+                    <Icon name="MessageCircle" size={40} className="text-white" />
+                  </div>
+                  <CardTitle className="text-3xl mb-4">Готовы повысить рейтинг?</CardTitle>
+                  <CardDescription className="text-lg text-gray-300">
+                    Свяжитесь со мной в Telegram для обсуждения деталей
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Button
+                    asChild
+                    size="lg"
+                    className="w-full text-xl py-8 bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_100%] hover:bg-[position:100%_0] transition-all duration-500 shadow-lg shadow-primary/50 hover:shadow-xl hover:shadow-primary/70 hover:scale-105"
+                  >
+                    <a
+                      href="https://t.me/sneznyy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-3"
+                    >
+                      <Icon name="Send" size={24} />
+                      Написать в Telegram
+                    </a>
+                  </Button>
+                  <p className="text-sm text-gray-400 mt-4">
+                    Ответим в течение 15 минут
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </section>
 
