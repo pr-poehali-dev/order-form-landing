@@ -76,6 +76,7 @@ const Index = () => {
 
             <Card className="bg-card/50 backdrop-blur-lg border-primary/20 shadow-2xl shadow-primary/10 animate-scale-in">
               <CardTitle className="text-3xl">Оставить заявку</CardTitle>
+              тут должна быть сочная кнопка
             </Card>
           </div>
         </section>
